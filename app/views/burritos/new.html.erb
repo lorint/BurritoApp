@@ -1,2 +1,15 @@
 <h1>Burritos#new</h1>
 <p>Find me in app/views/burritos/new.html.erb</p>
+
+<%= form_for @burrito do |f| %>
+	Name: <%= f.text_field :name %><br />
+
+	<%= collection_check_boxes :burrito, :ingredient_ids, @ingredients, :_id, :name %>
+
+	<%# @ingredients.each do |i| %>
+		<%#= check_box_tag :ingredients %>
+		<%#= i.name %>
+	<%# end %>
+	<br />
+	<%= f.submit %>
+<% end %>

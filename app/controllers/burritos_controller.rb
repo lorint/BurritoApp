@@ -6,9 +6,12 @@ class BurritosController < ApplicationController
   end
 
   def new
+    @burrito = Burrito.new
+    @ingredients = Ingredient.all
   end
 
   def create
+    raise params.inspect
   end
 
   def edit
